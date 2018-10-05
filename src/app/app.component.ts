@@ -16,11 +16,15 @@ export class AppComponent {
   callTestGet(e) {
     e.preventDefault();
     console.log('Im called');
-    this.person = this.http.get('/api/testget').subscribe(res => { console.log('got the response'); });
+    this.person = this.http.get('/api/testget').subscribe(res => {
+       this.person = JSON.stringify(res);
+      });
   }
 
   callApi(e) {
-    this.person = this.http.get('/api').subscribe(res => { console.log('api the response'); });
+    this.person = this.http.get('/api').subscribe(res => {
+       this.person = JSON.stringify (res);
+      });
   }
 
   submitFormJSON(e: any) {
@@ -42,13 +46,6 @@ export class AppComponent {
     const target = e.target;
     const username = target.querySelector('#username').value;
     const password = target.querySelector('#password').value;
-
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    const httpParams = new HttpParams();
-    httpParams.append('username', username);
-    httpParams.append('password', password);
 
     this.http.post('/api/login', {'username': username, 'password': password}).subscribe(
       data => {
