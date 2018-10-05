@@ -1,8 +1,27 @@
 {
+    "/api/testget":{
+        "target":"http://localhost:3000",
+        "secure":false,
+        "changeOrigin": true,
+        "logfile":"debug",
+        "pathRewrite": {"^/api/testget" : "/api/testget"}
+    },
+
     "/api":{
         "target":"http://localhost:3000",
         "secure":false,
+        "changeOrigin": true,
         "logfile":"debug",
-        "changeorigin":true
+        "pathRewrite": {"^/api" : "/api"}
+    },
+
+    "/api/login":{
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logfile": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api/login": "/api/login"
+        }
     }
 }
