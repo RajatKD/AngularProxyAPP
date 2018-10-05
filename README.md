@@ -27,6 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 #proxy.config.json
+(https://stackoverflow.com/questions/37172928/angular-cli-server-how-to-proxy-api-requests-to-another-server)
 
 /api/testget* path says: When I see this path inside my angular 2 application (the path can be stored anywhere) I want to do something with it. The * character indicates that everything which follows the sub-folder will be included. For instance, if you have multiple fonts inside /api/testget, the * will pick up all of them
 
